@@ -1,0 +1,27 @@
+{
+  "name": "zhuanwo.xyz",
+  "version": "0.0.1",
+  "description": "Yet Another URL Shorten Service",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soleo/ZhuanWo.git"
+  },
+  "keywords": [
+    "URLShorten",
+    "RESTfull",
+    "API"
+  ],
+  "author": "Xinjiang Shao <shaoxinjiang at gmail dot com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/soleo/ZhuanWo/issues"
+  },
+  "homepage": "https://github.com/soleo/ZhuanWo#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
+}
