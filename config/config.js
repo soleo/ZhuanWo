@@ -10,7 +10,8 @@ module.exports = function() {
         application : {
             url : appConstants[env]['url'],
             host : appConstants[env]['host'],
-            port : process.env.PORT || appConstants[env]['port']
+            port : appConstants[env]['port'],
+            database_url: appConstants[env]['database_url']
         },
        
         server : {
@@ -37,12 +38,14 @@ module.exports = function() {
                 'url' : 'https://' + process.env.NODE_HOST + ':' + 
                     process.env.NODE_PORT,
                 'host' : process.env.NODE_HOST,
-                'port' : process.env.NODE_PORT
+                'port' : process.env.PORT,
+                'database_url': process.env.DATABASE_URL
             },
             'development' : {
                 'url' : 'http://localhost:3000',
                 'host' : 'localhost',
-                'port' : 3000
+                'port' : 5000,
+                'database_url': process.env.DATABASE_URL
             },
             'test' : {
                 'url' : 'http://' + process.env.NODE_HOST + ':' + 
