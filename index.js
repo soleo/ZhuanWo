@@ -4,14 +4,13 @@ var Hapi = require('hapi');
 var Good = require('good');
 var _ = require('underscore');
 var config = require('./config/config');
-
+var routes = require('./routes');
 
 var host = config.application['host'];
 var port = config.application['port'];
 var server = new Hapi.Server();
 
 server.connection({ host: host, port: port });
-
 
 server.register({
         register: Good,
@@ -28,9 +27,10 @@ server.register({
         if (err) {
             throw err; // something bad happened loading the plugin
         }
-
-           
-
+        // Set Up Routes
+        for (var route in routes) {
+            server.route(routes[route]);
+        }
         // Start Server
         if (process.env.NODE_ENV !== 'test') {
            server.start(function () {
@@ -39,7 +39,5 @@ server.register({
 
         }
         
-        module.exports = server;
-
-    
+        module.exports = server; 
 });

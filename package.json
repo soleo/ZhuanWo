@@ -37,6 +37,7 @@
     "good": "^6.4.0",
     "good-console": "^5.1.0",
     "hapi": "^10.1.0",
+    "hapi-require-https": "^2.0.2",
     "joi": "^6.7.1",
     "node-inspector": "^0.12.3",
     "underscore": "^1.8.3"
