@@ -10,7 +10,7 @@ module.exports = function() {
         application : {
             url : appConstants[env]['url'],
             host : appConstants[env]['host'],
-            port : appConstants[env]['port']
+            port : process.env.PORT || appConstants[env]['port']
         },
        
         server : {
@@ -34,7 +34,7 @@ module.exports = function() {
     function applicationConfig(){
         return {
             'production' : {
-                'url' : 'http://' + process.env.NODE_HOST + ':' + 
+                'url' : 'https://' + process.env.NODE_HOST + ':' + 
                     process.env.NODE_PORT,
                 'host' : process.env.NODE_HOST,
                 'port' : process.env.NODE_PORT
