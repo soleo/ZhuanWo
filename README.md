@@ -8,7 +8,7 @@
 - [ ] Easy Deployment as Micro Service for anyone
 - [ ] Printable and Readable for Humans
 - [ ] Stats tracking and link validation
-
+- [ ] Scalable, Low Maintainess
 
 ## Installation
 
@@ -16,8 +16,8 @@
 
 ## Development
 
-`` git clone https://github.com/soleo/ZhuanWo``
-
-`` cd ZhuanWo ``
-
-`` grunt ``
+```
+$ git clone https://github.com/soleo/ZhuanWo
+$ cd ZhuanWo 
+$ grunt 
+```
