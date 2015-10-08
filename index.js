@@ -8,6 +8,7 @@ var Pack = require('./package');
 var Good = require('good');
 var _ = require('underscore');
 var config = require('./config/config');
+
 var routes = require('./routes');
 
 var host = config.application['host'];

@@ -2,6 +2,8 @@
 var handlers    = require('../lib/handlers');
 var hapi        = require('hapi');
 var Joi         = require('joi');
+var urlController = require('../controllers/url');
+var urlValidate = require('../validate/url');
 var standardHTTPErrors = [
     { code: 400, message: 'Bad Request' },
     { code: 500, message: 'Internal Server Error'}
@@ -69,17 +71,33 @@ module.exports = function() {
         {
             method: 'GET',
             path: '/{shortUrl}',
-            handler: function (request, reply) {
-                reply({message: 'This is an API endpoint for https://ZhuanWo.xyz/'+request.params.shortUrl+'. '})
-                    .type('application/json');
+            config: {
+                handler: urlController.decodeUrl,
+                validate: urlValidate.decodeUrl,
+                description: 'Redirect to Long URL',
+                tags: ['api'],
+                notes: ['URL Redirection'],
+                plugins: {
+                    'hapi-swagger': {
+                        responseMessages: standardHTTPErrors
+                    }
+                }
             }
         },
         {
-            method: 'GET',
+            method: 'POST',
             path: '/api/',
-            handler: function (request, reply) {
-                reply({message: 'This is an API endpoint for ZhuanWo. '})
-                    .type('application/json');
+            config:{
+                handler: urlController.encodeUrl,
+                validate: urlValidate.encodeUrl,
+                description: 'Encode Long URL',
+                tags: ['api'],
+                notes: ['Encode Long URL, return Short URL'],
+                plugins: {
+                    'hapi-swagger': {
+                        responseMessages: standardHTTPErrors
+                    }
+                }
             }
         }
 

@@ -20,6 +20,18 @@ module.exports = function(grunt) {
                 }
             }
         },
+        'node-inspector': {
+            custom: {
+                options: {
+                    'web-port': 8080,
+                    'web-host': 'localhost',
+                    'debug-port': 5858,
+                    'save-live-edit': false,
+                    'no-preload': false,
+                    'stack-trace-limit': 50
+                }
+            }
+        },
         nodemon: {
             dev: {
                 script: 'index.js',
@@ -59,7 +71,7 @@ module.exports = function(grunt) {
             }
         },
         jshint: { //docs: http://www.jshint.com/docs/options/
-            src: ['**/*.js', '!node_modules/**/*.js', '!coverage.html'],
+            src: ['**/*.js', '!node_modules/**/*.js', '!coverage.html', '*.js'],
             options: {
                 node: true,
                 newcap: true,
@@ -95,7 +107,7 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-nodemon');
-    //grunt.loadNpmTasks('grunt-node-inspector');
+    grunt.loadNpmTasks('grunt-node-inspector');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-mocha-test');
