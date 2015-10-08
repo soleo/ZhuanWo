@@ -31,7 +31,7 @@ module.exports = function(grunt) {
         },
         watch: {
             server: {
-                files: ['**/*.js', '!node_modules/**/*.js', '!coverage.html'],
+                files: ['**/*.js', '!node_modules/**/*.js', '!coverage.html', '**/*.html'],
                 tasks: ['jshint:with_overrides', 'mochaTest'],
                 options: {
                     livereload: true
