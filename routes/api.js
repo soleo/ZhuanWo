@@ -70,7 +70,7 @@ module.exports = function() {
         },
         {
             method: 'GET',
-            path: '/:segment',
+            path: '/{segment}',
             config: {
                 handler: urlController.decodeUrl,
                 validate: urlValidate.decodeUrl,

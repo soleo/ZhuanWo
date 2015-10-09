@@ -14,11 +14,11 @@ UrlController.prototype = (function() {
         encodeUrl: function encodeUrl(request, reply) {
             var longUrl = request.query.longUrl;  
             // Check LongUrl exsit in db first
-            var increment_uid = 1988;
+            var increment_uid = 11;
             // geneerta
             var segmentId = util.alphaID(increment_uid, false, 3, 'mysecretkey');
             // write encode method
-            console.log(segmentId);
+            //console.log(segmentId);
             var shortUrl = 'http://'+request.headers.host + '/' + segmentId;
             return reply(shortUrl);
 
