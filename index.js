@@ -21,7 +21,7 @@ var swaggerOptions = {
     apiVersion: Pack.version,
     info: {
         title: 'ZhuanWo.Xyz',
-        description: 'This Web API was built to for URL Shorten Service',
+        description: 'This Web API was built to for URL Shortener Service',
         contact: 'shaoxinjiang@gmail.com',
         license: 'MIT',
         licenseUrl: '/license'

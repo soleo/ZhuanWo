@@ -17,12 +17,7 @@ UrlValidate.prototype = (function(){
             })(),
             query: (function query(){
                 return {
-                    longUrl: Joi.string().uri({
-                          scheme: [
-                            'git',
-                            /git\+https?/
-                          ]
-                        }).required().description('Long URL')
+                    longUrl: Joi.string().uri().required().description('Long URL')
                 }
             })()
        
@@ -30,7 +25,7 @@ UrlValidate.prototype = (function(){
         decodeUrl: {
             params: (function params (argument) {
                 return {
-                    shortUrl: Joi.string().required().description('Short URL')
+                    segment: Joi.string().required().description('Short URL')
                 };
             })(),
             query: (function query(){

@@ -1,7 +1,7 @@
 {
   "name": "zhuanwo",
   "version": "0.0.1",
-  "description": "Yet Another URL Shorten Service",
+  "description": "Yet Another URL Shortener Service",
   "main": "index.js",
   "scripts": {
     "test": "grunt test"
@@ -47,6 +47,8 @@
     "inert": "^3.1.0",
     "joi": "^6.7.1",
     "marked": "^0.3.5",
+    "massive": "^2.0.9",
+    "mathjs": "^2.3.0",
     "node-inspector": "^0.12.3",
     "pg": "4.4.2",
     "underscore": "^1.8.3",
