@@ -9,6 +9,7 @@
 - [ ] Printable and Readable for Humans
 - [ ] Stats tracking and link validation
 - [ ] Scalable, Low Maintainess
+- [ ] URL Reputation Checking
 
 ## Installation
 
